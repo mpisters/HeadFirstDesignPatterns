@@ -3,6 +3,7 @@ package WeatherStation;
 public class HeatIndexDisplay implements Observer, DisplayElement{
     private WeatherData weatherData;
     private float heatIndex;
+
     public HeatIndexDisplay(WeatherData weatherData) {
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
@@ -15,8 +16,10 @@ public class HeatIndexDisplay implements Observer, DisplayElement{
     }
 
     @Override
-    public void update(float temp, float humidity, float pressure) {
-        this.heatIndex = computeHeatIndex(temp, humidity);
+    public void update() {
+        float temperature = this.weatherData.getTemperature();
+        float humidity = this.weatherData.getHumidity();
+        this.heatIndex = computeHeatIndex(temperature, humidity);
         display();
     }
 
