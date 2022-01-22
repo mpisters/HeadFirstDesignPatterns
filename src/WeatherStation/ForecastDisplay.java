@@ -1,19 +1,18 @@
 package WeatherStation;
 
-public class StatisticsDisplay implements Observer, DisplayElement{
+public class ForecastDisplay implements Observer, DisplayElement{
+    private WeatherData weatherData;
     private float temperature;
     private float humidity;
     private float pressure;
-    private WeatherData weatherData;
-
-    public StatisticsDisplay(WeatherData weatherData) {
+    public ForecastDisplay(WeatherData weatherData) {
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
     }
 
     @Override
     public void display() {
-        System.out.println("Statistics: " + temperature + "F degrees and " + humidity + "% humidity " + pressure + " pressure");
+        System.out.println("Forecast: " + temperature + "F degrees and " + humidity + "% humidity " + pressure + " pressure");
     }
 
     @Override
