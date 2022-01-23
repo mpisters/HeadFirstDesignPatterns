@@ -1,23 +1,15 @@
 package PizzaStore;
 
-public class CHStyleCheesePizza implements Pizza {
-    @Override
-    public void prepare() {
+public class CHStyleCheesePizza extends Pizza {
+    public CHStyleCheesePizza() {
+        name="Chicago Style deep dish cheese pizza";
+        dough="Extra Thick Crust Dough";
+        sauce="Plum Tomato Sauce";
 
+        toppings.add("Shredded Mozzoralla Cheese");
     }
 
-    @Override
-    public void bake() {
-
-    }
-
-    @Override
-    public void cut() {
-
-    }
-
-    @Override
-    public void box() {
-
+    void cut(){
+        System.out.println("Cutting the pizza into square slices");
     }
 }

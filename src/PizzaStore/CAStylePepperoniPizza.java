@@ -1,23 +1,5 @@
 package PizzaStore;
 
-public class CAStylePepperoniPizza implements Pizza {
-    @Override
-    public void prepare() {
+public class CAStylePepperoniPizza extends Pizza {
 
-    }
-
-    @Override
-    public void bake() {
-
-    }
-
-    @Override
-    public void cut() {
-
-    }
-
-    @Override
-    public void box() {
-
-    }
 }
